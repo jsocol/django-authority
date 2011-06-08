@@ -12,7 +12,7 @@ try:
     from django.views.decorators import csrf_protect
 except ImportError:
     from django.utils.decorators import decorator_from_middleware
-    from django.contrib.csrf.middleware import CsrfViewMiddleware
+    from django.middleware.csrf import CsrfViewMiddleware
     csrf_protect = decorator_from_middleware(CsrfViewMiddleware)
     csrf_protect.__name__ = 'csrf_protect'
 
